@@ -7,29 +7,28 @@ const Skills = () => {
       title: "Frontend Development",
       icon: <Code className="h-6 w-6" />,
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 85 },
-        { name: "Vue.js", level: 80 }
+        { name: "React.js", level: 90 },
+        { name: "HTML/CSS", level: 95 },
+        { name: "JavaScript", level: 90 }
       ]
     },
     {
       title: "Backend Development",
       icon: <Database className="h-6 w-6" />,
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 75 }
+        { name: "Node.js", level: 85 },
+        { name: "Express.js", level: 85 },
+        { name: "Python", level: 90 },
+        { name: "Java", level: 85 }
       ]
     },
     {
-      title: "Cloud & DevOps",
+      title: "Database & Cloud",
       icon: <Cloud className="h-6 w-6" />,
       skills: [
-        { name: "AWS", level: 80 },
-        { name: "Docker", level: 85 },
-        { name: "Kubernetes", level: 70 },
+        { name: "MySQL", level: 85 },
+        { name: "MongoDB", level: 80 },
+        { name: "REST APIs", level: 90 },
         { name: "CI/CD", level: 75 }
       ]
     },
@@ -37,19 +36,21 @@ const Skills = () => {
       title: "AI & Machine Learning",
       icon: <Brain className="h-6 w-6" />,
       skills: [
-        { name: "TensorFlow", level: 80 },
-        { name: "PyTorch", level: 75 },
-        { name: "Scikit-learn", level: 85 },
-        { name: "OpenAI APIs", level: 90 }
+        { name: "TensorFlow", level: 85 },
+        { name: "PyTorch", level: 80 },
+        { name: "Scikit-learn", level: 90 },
+        { name: "NumPy/Pandas", level: 85 }
       ]
     }
   ];
 
   const tools = [
     { name: "Git", icon: <Zap className="h-5 w-5" /> },
-    { name: "Figma", icon: <Palette className="h-5 w-5" /> },
+    { name: "GitHub", icon: <Code className="h-5 w-5" /> },
     { name: "VS Code", icon: <Code className="h-5 w-5" /> },
-    { name: "Postman", icon: <Database className="h-5 w-5" /> }
+    { name: "Postman", icon: <Database className="h-5 w-5" /> },
+    { name: "Jupyter", icon: <Brain className="h-5 w-5" /> },
+    { name: "Matplotlib", icon: <Palette className="h-5 w-5" /> }
   ];
 
   return (
@@ -106,7 +107,7 @@ const Skills = () => {
             Tools & Technologies
           </h3>
           <div className="flex justify-center">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-md">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-lg">
               {tools.map((tool, index) => (
                 <div
                   key={tool.name}

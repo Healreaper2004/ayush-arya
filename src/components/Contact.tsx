@@ -41,19 +41,13 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      value: "ayush.arya@example.com",
-      link: "mailto:ayush.arya@example.com"
-    },
-    {
-      icon: <Phone className="h-5 w-5" />,
-      label: "Phone",
-      value: "+91 12345 67890",
-      link: "tel:+911234567890"
+      value: "ayush.arya.11062004@gmail.com",
+      link: "mailto:ayush.arya.11062004@gmail.com"
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: "Location",
-      value: "India",
+      value: "Patna | Vellore",
       link: null
     }
   ];
@@ -178,31 +172,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="glass-card p-8">
-                <h3 className="text-xl font-semibold text-foreground mb-6">
-                  Follow Me
-                </h3>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => (
-                    <Button
-                      key={index}
-                      variant="ghost"
-                      size="sm"
-                      className="glass-card hover:bg-primary/10 p-3"
-                      asChild
-                    >
-                      <a
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={social.label}
-                      >
-                        {social.icon}
-                      </a>
-                    </Button>
-                  ))}
-                </div>
-              </div>
 
               <div className="glass-card p-8">
                 <h3 className="text-xl font-semibold text-foreground mb-4">

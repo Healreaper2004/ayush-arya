@@ -20,43 +20,33 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "AgriPred AI",
-      description: "AI-powered crop prediction and farming optimization platform",
-      techStack: ["React", "Python", "TensorFlow", "Node.js", "MongoDB"],
+      title: "AgriPred",
+      description: "AI-Powered Crop Diagnosis",
+      techStack: ["Python", "TensorFlow", "Deep Learning", "Computer Vision"],
       image: "/images/agripred.png",
       liveUrl: "https://agripred.example.com",
       githubUrl: "https://github.com/ayusharya/agripred",
-      longDescription: "A comprehensive agricultural prediction system that uses machine learning to analyze soil conditions, weather patterns, and historical data to provide farmers with optimal crop recommendations and yield predictions."
+      longDescription: "AI-powered rice leaf disease detection system using deep learning for early crop protection. Utilizes computer vision and machine learning algorithms to identify diseases in rice crops, helping farmers take preventive measures."
     },
     {
       id: 2,
-      title: "Smart Finance Tracker",
-      description: "Personal finance management with AI insights",
-      techStack: ["React Native", "Firebase", "Chart.js", "Node.js"],
-      image: "/images/finance-tracker.png",
-      liveUrl: "https://financetracker.example.com",
-      githubUrl: "https://github.com/ayusharya/finance-tracker",
-      longDescription: "An intelligent personal finance application that tracks expenses, categorizes spending patterns, and provides AI-driven insights to help users make better financial decisions."
+      title: "AutoXperio",
+      description: "Smart Garage Management System",
+      techStack: ["React.js", "Node.js", "Express.js", "MongoDB"],
+      image: "/images/autoxperio.png",
+      liveUrl: "https://autoxperio.example.com",
+      githubUrl: "https://github.com/ayusharya/autoxperio",
+      longDescription: "Full-stack garage management platform with role-based dashboards, inventory automation, and analytics. Features comprehensive vehicle management, appointment scheduling, and real-time inventory tracking."
     },
     {
       id: 3,
-      title: "EcoTask Manager",
-      description: "Sustainable task management with environmental impact tracking",
-      techStack: ["Vue.js", "Express.js", "PostgreSQL", "Docker"],
-      image: "/images/ecotask.png",
-      liveUrl: "https://ecotask.example.com",
-      githubUrl: "https://github.com/ayusharya/ecotask",
-      longDescription: "A project management tool that helps teams track their environmental impact while managing tasks, promoting sustainable business practices and carbon footprint reduction."
-    },
-    {
-      id: 4,
-      title: "Neural Network Visualizer",
-      description: "Interactive tool for understanding neural networks",
-      techStack: ["JavaScript", "D3.js", "Python", "Flask"],
-      image: "/images/neural-viz.png",
-      liveUrl: "https://neuralviz.example.com",
-      githubUrl: "https://github.com/ayusharya/neural-visualizer",
-      longDescription: "An educational platform that visualizes how neural networks learn and make decisions, making complex AI concepts accessible to students and developers."
+      title: "CloudCast",
+      description: "Real-Time Weather Forecast App",
+      techStack: ["JavaScript", "HTML", "CSS", "OpenWeatherMap API"],
+      image: "/images/cloudcast.png",
+      liveUrl: "https://cloudcast.example.com",
+      githubUrl: "https://github.com/ayusharya/cloudcast",
+      longDescription: "Responsive weather forecasting app with geolocation, AQI, and multi-day forecasts using OpenWeatherMap API. Provides detailed weather information including air quality index and extended forecasts."
     }
   ];
 
@@ -107,11 +97,11 @@ const Projects = () => {
                     </span>
                   )}
                 </div>
-                <div className="flex gap-3">
+                <div className="flex justify-center">
                   <Button
                     size="sm"
                     variant="outline"
-                    className="flex-1 glass hover:bg-primary/20 border-primary/30"
+                    className="glass hover:bg-primary/20 border-primary/30 px-6"
                     onClick={(e) => {
                       e.stopPropagation();
                       window.open(project.liveUrl, '_blank');
@@ -119,18 +109,6 @@ const Projects = () => {
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Live Demo
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1 glass hover:bg-secondary/20 border-secondary/30"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      window.open(project.githubUrl, '_blank');
-                    }}
-                  >
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
                   </Button>
                 </div>
               </div>
@@ -170,21 +148,13 @@ const Projects = () => {
                     ))}
                   </div>
                 </div>
-                <div className="flex gap-4 pt-4">
+                <div className="flex justify-center pt-4">
                   <Button
-                    className="flex-1"
+                    className="px-8"
                     onClick={() => window.open(selectedProject.liveUrl, '_blank')}
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
-                    View Live
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="flex-1 glass border-secondary/30"
-                    onClick={() => window.open(selectedProject.githubUrl, '_blank')}
-                  >
-                    <Github className="h-4 w-4 mr-2" />
-                    Source Code
+                    View Live Demo
                   </Button>
                 </div>
               </div>
