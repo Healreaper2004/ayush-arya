@@ -42,8 +42,8 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-muted-foreground">
                 <p className="leading-relaxed">
-                  I'm a passionate Software Engineer with a deep love for creating innovative 
-                  digital solutions. With expertise in full-stack development and a keen 
+                  I'm a passionate fresher Software Engineer with 0+ years of experience and a deep love for creating innovative 
+                  digital solutions. With growing expertise in full-stack development and a keen 
                   interest in artificial intelligence, I strive to build applications that 
                   make a meaningful impact.
                 </p>

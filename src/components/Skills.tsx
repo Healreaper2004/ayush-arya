@@ -48,7 +48,6 @@ const Skills = () => {
     { name: "Git", icon: <Zap className="h-5 w-5" /> },
     { name: "GitHub", icon: <Code className="h-5 w-5" /> },
     { name: "VS Code", icon: <Code className="h-5 w-5" /> },
-    { name: "Postman", icon: <Database className="h-5 w-5" /> },
     { name: "Jupyter", icon: <Brain className="h-5 w-5" /> },
     { name: "Matplotlib", icon: <Palette className="h-5 w-5" /> }
   ];
