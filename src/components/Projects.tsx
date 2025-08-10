@@ -10,7 +10,6 @@ interface Project {
   techStack: string[];
   image: string;
   liveUrl: string;
-  githubUrl: string;
   longDescription: string;
 }
 
@@ -23,9 +22,8 @@ const Projects = () => {
       title: "AgriPred",
       description: "AI-Powered Crop Diagnosis",
       techStack: ["Python", "TensorFlow", "Deep Learning", "Computer Vision"],
-      image: "/projects/project1.png", // updated path
-      liveUrl: "https://agripred.example.com",
-      githubUrl: "https://github.com/ayusharya/agripred",
+      image: "/projects/project1.png",
+      liveUrl: "https://agripred.onrender.com/",
       longDescription: "AI-powered rice leaf disease detection system using deep learning for early crop protection. Utilizes computer vision and machine learning algorithms to identify diseases in rice crops, helping farmers take preventive measures."
     },
     {
@@ -33,9 +31,8 @@ const Projects = () => {
       title: "AutoXperio",
       description: "Smart Garage Management System",
       techStack: ["React.js", "Node.js", "Express.js", "MongoDB"],
-      image: "/projects/project2.png", // updated path
-      liveUrl: "https://autoxperio.example.com",
-      githubUrl: "https://github.com/ayusharya/autoxperio",
+      image: "/projects/project2.png",
+      liveUrl: "https://autoxperio.onrender.com/",
       longDescription: "Full-stack garage management platform with role-based dashboards, inventory automation, and analytics. Features comprehensive vehicle management, appointment scheduling, and real-time inventory tracking."
     },
     {
@@ -43,9 +40,8 @@ const Projects = () => {
       title: "CloudCast",
       description: "Real-Time Weather Forecast App",
       techStack: ["JavaScript", "HTML", "CSS", "OpenWeatherMap API"],
-      image: "/projects/project3.png", // updated path
-      liveUrl: "https://cloudcast.example.com",
-      githubUrl: "https://github.com/ayusharya/cloudcast",
+      image: "/projects/project3.png",
+      liveUrl: "https://healreaper2004.github.io/CloudCast/",
       longDescription: "Responsive weather forecasting app with geolocation, AQI, and multi-day forecasts using OpenWeatherMap API. Provides detailed weather information including air quality index and extended forecasts."
     }
   ];
@@ -72,7 +68,6 @@ const Projects = () => {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              {/* Show project image instead of just text */}
               <img
                 src={project.image}
                 alt={project.title}
