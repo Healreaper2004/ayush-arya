@@ -2,8 +2,9 @@ import { Button } from '@/components/ui/button';
 import { Download, Eye, FileText } from 'lucide-react';
 
 const Resume = () => {
-  const resumeUrl = "https://docs.google.com/document/d/1example-resume-id/preview";
-  const downloadUrl = "https://drive.google.com/uc?export=download&id=1example-resume-id";
+  // Local paths to your PDF file in public/ directory
+  const resumeUrl = "/projects/Ayush Arya Resume-2.pdf"; // view in browser
+  const downloadUrl = "/projects/Ayush Arya Resume-2.pdf"; // same file for download
 
   return (
     <section id="resume" className="py-20 px-4">
@@ -41,21 +42,11 @@ const Resume = () => {
 
           {/* Resume Preview */}
           <div className="glass-card p-6" data-aos="fade-up" data-aos-delay="200">
-            <div className="aspect-[8.5/11] bg-background rounded-lg border-2 border-dashed border-border flex flex-col items-center justify-center">
-              <div className="text-center space-y-4">
-                <div className="text-6xl text-muted-foreground">
-                  <FileText className="h-20 w-20 mx-auto" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Resume Preview
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Click the buttons above to view or download my complete resume
-                  </p>
-                </div>
-              </div>
-            </div>
+            <iframe
+              src={resumeUrl}
+              className="w-full aspect-[8.5/11] rounded-lg border"
+              title="Resume Preview"
+            ></iframe>
           </div>
 
           {/* Quick Info */}
