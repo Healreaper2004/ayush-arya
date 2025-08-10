@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ExternalLink, Github, X } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -23,7 +23,7 @@ const Projects = () => {
       title: "AgriPred",
       description: "AI-Powered Crop Diagnosis",
       techStack: ["Python", "TensorFlow", "Deep Learning", "Computer Vision"],
-      image: "/images/agripred.png",
+      image: "/projects/project1.png", // updated path
       liveUrl: "https://agripred.example.com",
       githubUrl: "https://github.com/ayusharya/agripred",
       longDescription: "AI-powered rice leaf disease detection system using deep learning for early crop protection. Utilizes computer vision and machine learning algorithms to identify diseases in rice crops, helping farmers take preventive measures."
@@ -33,7 +33,7 @@ const Projects = () => {
       title: "AutoXperio",
       description: "Smart Garage Management System",
       techStack: ["React.js", "Node.js", "Express.js", "MongoDB"],
-      image: "/images/autoxperio.png",
+      image: "/projects/project2.png", // updated path
       liveUrl: "https://autoxperio.example.com",
       githubUrl: "https://github.com/ayusharya/autoxperio",
       longDescription: "Full-stack garage management platform with role-based dashboards, inventory automation, and analytics. Features comprehensive vehicle management, appointment scheduling, and real-time inventory tracking."
@@ -43,7 +43,7 @@ const Projects = () => {
       title: "CloudCast",
       description: "Real-Time Weather Forecast App",
       techStack: ["JavaScript", "HTML", "CSS", "OpenWeatherMap API"],
-      image: "/images/cloudcast.png",
+      image: "/projects/project3.png", // updated path
       liveUrl: "https://cloudcast.example.com",
       githubUrl: "https://github.com/ayusharya/cloudcast",
       longDescription: "Responsive weather forecasting app with geolocation, AQI, and multi-day forecasts using OpenWeatherMap API. Provides detailed weather information including air quality index and extended forecasts."
@@ -72,9 +72,12 @@ const Projects = () => {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-t-2xl flex items-center justify-center text-4xl font-bold text-primary/50">
-                {project.title.slice(0, 2)}
-              </div>
+              {/* Show project image instead of just text */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="aspect-video object-cover rounded-t-2xl"
+              />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                   {project.title}
@@ -126,9 +129,11 @@ const Projects = () => {
             </DialogHeader>
             {selectedProject && (
               <div className="space-y-6">
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center text-6xl font-bold text-primary/50">
-                  {selectedProject.title.slice(0, 2)}
-                </div>
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="aspect-video object-cover rounded-lg"
+                />
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">Description</h4>
                   <p className="text-muted-foreground leading-relaxed">
