@@ -3,7 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -18,15 +19,45 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      // Send email to you
+      await emailjs.send(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID_TO_ME',
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          message: formData.message
+        },
+        'YOUR_PUBLIC_KEY'
+      );
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+      // Send auto-reply to them
+      await emailjs.send(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID_AUTO_REPLY',
+        {
+          to_name: formData.name,
+          to_email: formData.email
+        },
+        'D5R2VfqejWwUukYP2'
+      );
 
-    setFormData({ name: '', email: '', message: '' });
+      toast({
+        title: 'Message sent!',
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: 'Error',
+        description: 'Something went wrong. Please try again.',
+        variant: 'destructive'
+      });
+    }
+
     setIsSubmitting(false);
   };
 
@@ -40,14 +71,14 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
-      label: "Email",
-      value: "ayush.arya.11062004@gmail.com",
-      link: "mailto:ayush.arya.11062004@gmail.com"
+      label: 'Email',
+      value: 'ayush.arya.11062004@gmail.com',
+      link: 'mailto:ayush.arya.11062004@gmail.com'
     },
     {
       icon: <MapPin className="h-5 w-5" />,
-      label: "Location",
-      value: "Patna | Vellore",
+      label: 'Location',
+      value: 'Patna | Vellore',
       link: null
     }
   ];
@@ -55,18 +86,18 @@ const Contact = () => {
   const socialLinks = [
     {
       icon: <Github className="h-5 w-5" />,
-      label: "GitHub",
-      url: "https://github.com/ayusharya"
+      label: 'GitHub',
+      url: 'https://github.com/Healreaper2004 '
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
-      label: "LinkedIn",
-      url: "https://linkedin.com/in/ayusharya"
+      label: 'LinkedIn',
+      url: 'http://linkedin.com/in/ayush-arya-9b3406255'
     },
     {
       icon: <Twitter className="h-5 w-5" />,
-      label: "Twitter",
-      url: "https://twitter.com/ayusharya"
+      label: 'Twitter',
+      url: 'https://twitter.com/HealReaper'
     }
   ];
 
@@ -131,7 +162,7 @@ const Contact = () => {
                   variant="outline"
                 >
                   {isSubmitting ? (
-                    "Sending..."
+                    'Sending...'
                   ) : (
                     <>
                       <Send className="h-4 w-4 mr-2" />
@@ -171,7 +202,6 @@ const Contact = () => {
                   ))}
                 </div>
               </div>
-
 
               <div className="glass-card p-8">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
