@@ -1,14 +1,15 @@
 import { Button } from '@/components/ui/button';
-import { Download, Eye, FileText } from 'lucide-react';
+import { Download, Eye } from 'lucide-react';
 
 const Resume = () => {
-  // Local paths to your PDF file in public/ directory
-  const resumeUrl = "/projects/Ayush Arya Resume-2.pdf"; // view in browser
-  const downloadUrl = "/projects/Ayush Arya Resume-2.pdf"; // same file for download
+  // Updated file path without spaces or extra folder
+  const resumeUrl = "/Ayush_Arya_Resume.pdf"; // view in browser
+  const downloadUrl = "/Ayush_Arya_Resume.pdf"; // same file for download
 
   return (
     <section id="resume" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
+        {/* Heading */}
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Resume
@@ -41,7 +42,11 @@ const Resume = () => {
           </div>
 
           {/* Resume Preview */}
-          <div className="glass-card p-6" data-aos="fade-up" data-aos-delay="200">
+          <div
+            className="glass-card p-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <iframe
               src={resumeUrl}
               className="w-full aspect-[8.5/11] rounded-lg border"
@@ -50,18 +55,28 @@ const Resume = () => {
           </div>
 
           {/* Quick Info */}
-          <div className="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="300">
+          <div
+            className="grid md:grid-cols-3 gap-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div className="glass-card p-6 text-center">
               <div className="text-2xl font-bold text-primary mb-2">3+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
+              <div className="text-sm text-muted-foreground">
+                Years Experience
+              </div>
             </div>
             <div className="glass-card p-6 text-center">
               <div className="text-2xl font-bold text-primary mb-2">15+</div>
-              <div className="text-sm text-muted-foreground">Projects Completed</div>
+              <div className="text-sm text-muted-foreground">
+                Projects Completed
+              </div>
             </div>
             <div className="glass-card p-6 text-center">
               <div className="text-2xl font-bold text-primary mb-2">5+</div>
-              <div className="text-sm text-muted-foreground">Technologies Mastered</div>
+              <div className="text-sm text-muted-foreground">
+                Technologies Mastered
+              </div>
             </div>
           </div>
         </div>
