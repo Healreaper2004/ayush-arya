@@ -61,13 +61,13 @@ const Resume = () => {
             data-aos-delay="300"
           >
             <div className="glass-card p-6 text-center">
-              <div className="text-2xl font-bold text-primary mb-2">3+</div>
+              <div className="text-2xl font-bold text-primary mb-2">0+</div>
               <div className="text-sm text-muted-foreground">
                 Years Experience
               </div>
             </div>
             <div className="glass-card p-6 text-center">
-              <div className="text-2xl font-bold text-primary mb-2">15+</div>
+              <div className="text-2xl font-bold text-primary mb-2">3+</div>
               <div className="text-sm text-muted-foreground">
                 Projects Completed
               </div>
