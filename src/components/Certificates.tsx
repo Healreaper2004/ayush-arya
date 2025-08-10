@@ -1,4 +1,4 @@
-import { Award, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Certificates = () => {
@@ -9,7 +9,7 @@ const Certificates = () => {
       issuer: "Microsoft",
       date: "2024",
       score: "Score: 904/1000",
-      image: "/images/azure-cert.png",
+      image: "/certificates/certificate1.png",
       verifyUrl: "https://learn.microsoft.com/en-us/certifications/"
     },
     {
@@ -18,7 +18,7 @@ const Certificates = () => {
       issuer: "C-DAC Patna",
       date: "2024",
       score: "Grade: A",
-      image: "/images/cdac-cert.png",
+      image: "/certificates/certificate2.jpg",
       verifyUrl: "https://cdac.in/"
     }
   ];
@@ -44,14 +44,13 @@ const Certificates = () => {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              {/* Certificate Image Placeholder */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-secondary/20 rounded-t-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <Award className="h-16 w-16 text-primary/50 mx-auto mb-4" />
-                  <div className="text-sm font-medium text-primary/70">
-                    {cert.issuer}
-                  </div>
-                </div>
+              {/* Certificate Image */}
+              <div className="aspect-[4/3] rounded-t-2xl overflow-hidden">
+                <img
+                  src={cert.image}
+                  alt={cert.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               <div className="p-6">
